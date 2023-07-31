@@ -235,6 +235,8 @@ class _phonePecardState extends State<phonePecard> {
               ),
               // Add more cards or widgets here as needed
               BillPaymentCard(),
+              OptionCard(),
+              sponsoredLinks(),
             ],
           ),
         ),
@@ -346,6 +348,274 @@ class BillPaymentCard extends StatelessWidget {
               ],
             )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class OptionCard extends StatelessWidget {
+  const OptionCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Expanded(
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(16),
+                  ),
+                ),
+                color: Color(0xff4e84da),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      top: 20.0, bottom: 20, left: 10, right: 10),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.analytics_outlined,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        "PhonePe Wallet",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(16),
+                  ),
+                ),
+                color: Color(0xff4e84da),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      top: 20.0, bottom: 20, left: 10, right: 10),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.account_box_outlined,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        "Rewards",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(16),
+                  ),
+                ),
+                color: Color(0xff4e84da),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      top: 20.0, bottom: 20, left: 10, right: 10),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.accessibility_new,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        "Invite Now",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class sponsoredLinks extends StatelessWidget {
+  const sponsoredLinks({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 5, bottom: 5),
+      width: double.infinity,
+      child: const Card(
+        elevation: 4.0,
+        shadowColor: Color(0xffe6efff),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(16),
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 16,
+            bottom: 16,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 18.0),
+                child: Text(
+                  "Sponsored Links",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15), // Top left corner
+                          topRight: Radius.circular(15), // Top right corner
+                          bottomLeft: Radius.circular(15), // Bottom left corner
+                          bottomRight:
+                              Radius.circular(15), // Bottom right corner
+                        ),
+                        child: Image(
+                          image: NetworkImage(
+                              "https://play-lh.googleusercontent.com/G9tUm4oC57E6QQ9ZRbdmAjM1832BdRPw9B8lRweKn2QuPfdMM4LCCz68J22k3w_Vb_w=w240-h480-rw"),
+                          width: 50,
+                          height: 50,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      SizedBox(height: 7),
+                      Text("Buddy Loan",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          )),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15), // Top left corner
+                          topRight: Radius.circular(15), // Top right corner
+                          bottomLeft: Radius.circular(15), // Bottom left corner
+                          bottomRight:
+                              Radius.circular(15), // Bottom right corner
+                        ),
+                        child: Image(
+                          image: NetworkImage(
+                              "https://devdiscourse.blob.core.windows.net/devnews/05_01_2023_14_57_06_7081964.jpg"),
+                          width: 50,
+                          height: 50,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      SizedBox(height: 7),
+                      Text("Kotak 811",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          )),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15), // Top left corner
+                          topRight: Radius.circular(15), // Top right corner
+                          bottomLeft: Radius.circular(15), // Bottom left corner
+                          bottomRight:
+                              Radius.circular(15), // Bottom right corner
+                        ),
+                        child: Image(
+                          image: NetworkImage(
+                              "https://play-lh.googleusercontent.com/Yg0lq5gOr7jHb6ODrMol40LDcrg_bRadfF9E8IW7qIVXLnnUKC-Ooesp8FZJKNZ4Fw"),
+                          width: 50,
+                          height: 50,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      SizedBox(height: 7),
+                      Text("Rummy Circle",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          )),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15), // Top left corner
+                          topRight: Radius.circular(15), // Top right corner
+                          bottomLeft: Radius.circular(15), // Bottom left corner
+                          bottomRight:
+                              Radius.circular(15), // Bottom right corner
+                        ),
+                        child: Image(
+                          image: NetworkImage(
+                              "https://play-lh.googleusercontent.com/fQnF0Y8Yzx_g_2lH0i5z9LugLUyyqp9jRqGQSrVJenYkx6dJVh90cK6oUpsIDGrWNA=w200"),
+                          width: 50,
+                          height: 50,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      SizedBox(height: 7),
+                      Text("Rummy Card",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          )),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
