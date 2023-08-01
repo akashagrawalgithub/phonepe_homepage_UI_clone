@@ -13,11 +13,45 @@ class PhonePe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
-          body: phonePecard(),
+          body: const phonePecard(),
+          bottomNavigationBar: BottomNavigationBar(
+            elevation: 4.0,
+            type: BottomNavigationBarType.fixed,
+            selectedItemColor: Color(0xff5c269d),
+            items: [
+              BottomNavigationBarItem(
+                icon: Container(
+                  padding: const EdgeInsets.all(5),
+                  decoration: const BoxDecoration(
+                    color: Color(0xff5c269d),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(Icons.home_filled, color: Colors.white),
+                ),
+                label: 'Home',
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_bag),
+                label: 'Store',
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.shield),
+                label: 'Insurance',
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.currency_rupee),
+                label: "Wealth",
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.swap_horiz_outlined),
+                label: "History",
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -38,7 +72,7 @@ class _phonePecardState extends State<phonePecard> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.only(top: 50, left: 10, right: 10),
+          padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
           child: ListView(
             children: [
               Card(
